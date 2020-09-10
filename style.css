@@ -4,7 +4,7 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #446190;
+  background-color: #344a72;
 }
 
 .container{
@@ -57,7 +57,7 @@ body{
 #last-text{
   padding: 10px;
   color: aliceblue; 
-  background-color: #446190;
+  background-color: #344a72;
 }
 
 #last-text a{
