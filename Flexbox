@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    #content-container {
+      width: 600px;
+      display: block;
+      margin: auto;
+      background-color: #333;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      height: 100%;
+      align-items: flex-start;
+    }
+
+    .item {
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      width: 150px;
+      height: 50px;
+      margin: 20px;
+    }
+    
+    .item-1 {
+      order:3;
+    }
+    
+    .item-2 {
+      order: 2;
+    }
+    
+    .item-3 {
+      order: 1;
+    }
+
+    @media(max-width: 500px){
+      #content-container {
+      flex-direction: column;
+      
+    }
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="content-container">
+    <div class="item item-1"><h3>İtem 1</h3></div>
+    <div class="item item-2"><h3>İtem 2</h3></div>
+    <div class="item item-3"><h3>İtem 3</h3></div>
+    <div class="item"><h3>İtem 4</h3></div>
+    <div class="item"><h3>İtem 5</h3></div>
+    <div class="item"><h3>İtem 6</h3></div>
+    <div class="item"><h3>İtem 7</h3></div>
+    <div class="item"><h3>İtem 8</h3></div>
+    <div class="item"><h3>İtem 9</h3></div>
+    <div class="item"><h3>İtem 10</h3></div>
+    <div class="item"><h3>İtem 11</h3></div>
+    <div class="item"><h3>İtem 12</h3></div>
+    <div class="item"><h3>İtem 13</h3></div>
+    <div class="item"><h3>İtem 14</h3></div>
+  </div>
+</body>
+</html>
