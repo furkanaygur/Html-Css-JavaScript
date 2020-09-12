@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Site 2</title>
+  <style>
+    /* Reset */
+* { 
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+ 
+}
+
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+header {
+   background: #333 url('https://source.unsplash.com/random') no-repeat center center/cover; 
+  color: #fff;
+  height:100vh;
+  text-align: center;
+  padding: 2rem;
+  padding-top: 15rem;
+}
+
+header h1 {
+  font-size: 3rem; 
+}
+
+header p {
+  margin: 1em 0;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 0.75rem 2rem;
+
+}
+
+/* Section about */
+#about-info {
+  padding: 2rem;
+}
+
+/* Media Max-Height 350px */
+@media( Max-Height:350px ) {
+  header {
+    padding-top: 2rem;
+  }
+}
+
+/* Media Max-Height 650px */
+@media( Max-Height:650px ) {
+  header {
+    padding-top: 5rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Welcome</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sapiente quo,
+       atque tempore aliquid architecto itaque aperiam dolores natus voluptas!</p>
+      <a href="ResponsiveSite2.html" class="btn">Find Out More</a>
+    </header>
+  <!-- Header End -->
+  <!-- Section About  -->
+  <section id="about-info">
+    <h1>Welcoem to the Our Website</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Doloribus nam, quasi aut quidem deserunt optio dolorem quos ipsa consectetur assumenda minus id dolores asperiores tempore? 
+      Soluta suscipit at recusandae. Praesentium!
+    </p>
+  </section>
+  <!-- Section About End -->
+</body>
+</html>
