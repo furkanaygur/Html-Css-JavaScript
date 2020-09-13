@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Target Selectors</title>
+<style>
+  /* Direct Child */
+  div > p {
+    background-color: red;
+    color: white;
+  }
+
+  /* Directly After */
+  div + p {
+    background-color: black;
+    color: white;
+  }
+
+  /* By Attribute */
+  a[target='_blank'] {
+    background-color: yellow;
+    color: darkblue;
+  }
+
+  a[target='_self'] {
+    background-color: darkblue;
+    color: yellow;
+  }
+
+  input[type='text'] {
+    width: 100%;
+    background-color: orange;
+  }
+  
+  input[type='email']{
+    width: 100%;
+    background-color: purple;
+  }
+  
+</style>
+</head>
+<body>
+  <div>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <a href="#">Link1</a> 
+  <a href="#" target="_self">Link Target to Self</a>
+  <a href="https://www.google.com.tr" target="_blank">Link Target to Google</a>
+  <input type="text" name="name" placeholder="Name's Textbox">
+  <input type="email" name="email" placeholder="Email's Textbox But type = email">
+  <input type="button" value="Input type button">
+
+</body>
+</html>
