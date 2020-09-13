@@ -24,6 +24,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
 /* Utility Classes */
 .text-primary {
   color: #93cb52;
@@ -136,24 +144,16 @@ html {
   height: 100%;
   padding: 0 2rem;
   /* Overlay */
-  top: 60px;
+  top: 65px;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
 }
-/* Container */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 2rem;
-  overflow: hidden;
-}
 
 /* Section ::What We Do:: */
 #section-what-we-do .items {
   display: flex;
-  flex-direction: row;
   padding: 1em;
 }
 
@@ -173,7 +173,6 @@ html {
 /* Section ::Who We Are:: */
 #section-who-we-are {
   display: flex;
-  flex-direction: row;
 }
 
 #section-who-we-are div {
@@ -197,7 +196,6 @@ html {
 /* Section ::Clients:: */
 #clients .items {
   display: flex;
-  padding: 1rem;
 }
 
 #clients .items img {
@@ -211,13 +209,10 @@ html {
   display: flex;
 }
 
-#section-contact .contact-form 
+#section-contact .contact-form,
+#section-contact .map
 {
   flex: 1;
-}
-
-#section-contact .map {
-  flex: 2;
 }
 
 #section-contact .contact-form .form-group {
@@ -232,5 +227,4 @@ html {
 #section-contact .contact-form  textarea {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #dddd;
 }
