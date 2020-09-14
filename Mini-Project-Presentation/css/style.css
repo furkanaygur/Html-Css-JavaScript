@@ -1,0 +1,102 @@
+/* Reset */
+* {
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Html */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Root */
+:root {
+  --page-1-color: steelblue;
+  --page-2-color: tan;
+  --page-3-color: rgb(243, 182, 70);
+  --page-4-color: rgb(61, 240, 61);
+  --animate-speep: 0.3s;
+}
+
+
+/* Utility Clases */
+.btn {
+  display: inline-block;
+  background-color: #f4f4f4;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  transition: all var(--animate-speep) ease-in-out;
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+
+/* Page */
+#page-1 { background-color: var(--page-1-color);}
+#page-2 { background-color: var(--page-2-color);}
+#page-3 { background-color: var(--page-3-color);}
+#page-4 { background-color: var(--page-4-color);}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 4rem;
+}
+
+.page > h1{
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+.page > p {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+ 
+}
+
+.page div > a {
+  margin: 0 1rem;
+}
+
+/* Page-1 Animations */
+#page-1 h1 {
+  transform: translateY(-1000px);
+  animation: AnimateHeading 1s forwards ease-in;
+}
+
+@keyframes AnimateHeading {
+  to {
+    transform: translateY(0);
+  }
+}
+
+#page-1 p {
+  transform: translateX(-1800px);
+  animation: AnimateText 1s forwards ease-in 0.8s;
+}
+@keyframes AnimateText {
+  to {
+    transform: translateX(0);
+  }
+}
