@@ -81,7 +81,7 @@ header h1 {
 #section-timeline ul li:before {
   content: '';
   position: absolute;
-  background-color: var(--header-background-color);
+  background-color: #333;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -119,6 +119,10 @@ header h1 {
   transform: none;
   visibility: visible;
   opacity: 1;
+}
+
+#section-timeline ul li.show:before {
+  background: var(--header-background-color);
 }
 
 /*  Tablet */
