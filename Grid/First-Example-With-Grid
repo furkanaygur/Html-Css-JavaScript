@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gird First Example</title>
+
+  <style>
+    /* Box */
+    .box {
+      padding:3rem;
+      text-align: center;
+      background-color: #ddd;
+      border: #ccc 1px solid;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      /* grid-template-columns: 200px 200px; */
+      /* grid-template-columns: 200px auto auto 200px; */
+      /* grid-template-columns: repeat(3, 200px); */
+      /* grid-template-columns: 1fr 2fr 1fr; */
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
+    }
+
+    /* Main */
+    main{
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-gap: 1rem;
+    }
+    main section, main article {
+      margin-top: 1rem;
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Grid -->
+  <div class="grid">
+    <div class="box">Box-1</div>
+    <div class="box">Box-2</div>
+    <div class="box">Box-3</div>
+    <div class="box">Box-4</div>
+    <div class="box">Box-5</div>
+  </div>
+  <!-- Grid End -->
+  <!-- Main -->
+  <main>
+    <section>
+      <h2>Welcome The Site</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+         Totam non cum hic, consequuntur aut quod? Cum, deleniti beatae. Neque, a?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Cumque, sequi. Aliquam assumenda non, soluta officiis officia distinctio facere necessitatibus nulla?</p>
+    </section>
+    <article>
+      <h3>Hello</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, voluptatibus?</p>
+    </article>
+  </main>
+  <!-- Main End -->
+
+
+</body>
+</html>
