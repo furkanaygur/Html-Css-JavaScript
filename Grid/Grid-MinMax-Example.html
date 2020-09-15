@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gird Auto-Fix And MinMax Example</title>
+
+  <style>
+    /* Box */
+    .box {
+      padding:3rem;
+      text-align: center;
+      background-color: #ddd;
+      border: #ccc 1px solid;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat( auto-fit , minmax(200px,1fr));
+      grid-gap: 1rem;
+    }
+  
+  </style>
+
+</head>
+<body>
+  <!-- Grid -->
+  <div class="grid">
+    <div class="box">Box-1</div>
+    <div class="box">Box-2</div>
+    <div class="box">Box-3</div>
+    <div class="box">Box-4</div>
+    <div class="box">Box-5</div>
+    <div class="box">Box-6</div>
+    <div class="box">Box-7</div>
+    <div class="box">Box-8</div>
+    <div class="box">Box-9</div>
+    <div class="box">Box-10</div>
+    <div class="box">Box-11</div>
+    <div class="box">Box-12</div>
+    <div class="box">Box-13</div>
+  </div>
+  <!-- Grid End -->
+
+</body>
+</html>
