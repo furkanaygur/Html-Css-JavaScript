@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'functions';
 
 /*Reset*/
 * {
@@ -9,7 +10,7 @@
 
 body {
   background-color: $light-color;
-  color: $dark-color;
+  color: text-color($light-color);
   line-height: 1.4;
   font-family: $font-stack;
 }
@@ -17,7 +18,7 @@ body {
 /*Header*/
 header {
   background-color: $dark-color;
-  color: $light-color;
+  color: text-color($dark-color);
   padding: 1rem;
 
   h1 {
@@ -40,13 +41,13 @@ header {
   /* section-a*/
   &-a {
     background-color: $primary-color;
-    color: $light-color;
-    
+    color: text-color($primary-color);
+
   }
   /*section-b*/
   &-b {
     background-color: $secondary-color;
-    color: $light-color;
+    color: text-color($secondary-color);
 
   }
 }
@@ -62,17 +63,30 @@ header {
 }
 
 .btn {
+  
+  transition: all 0.4s ease;
+
+  &:hover {
+    @include transform(translateY(-3px));
+  }
+
   &-light {
     @extend %btn-shared;
     background-color: $light-color;
-    color: $dark-color;
+    color: text-color($light-color);
+
+    &:hover {
+      background-color: darken($light-color, 30%);
+    }
   }
 
   &-dark {
     @extend %btn-shared;
     background-color: $dark-color;
-    color: $light-color;
+    color: text-color($dark-color);
+
+    &:hover {
+      background-color: lightness($dark-color, 30%);
+    }
   }
-
-
 }

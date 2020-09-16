@@ -8,7 +8,7 @@
 
 body {
   background-color: #f4f4f4;
-  color: #333;
+  color: #000;
   line-height: 1.4;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -16,7 +16,7 @@ body {
 /*Header*/
 header {
   background-color: #333;
-  color: #f4f4f4;
+  color: #fff;
   padding: 1rem;
 }
 
@@ -42,12 +42,12 @@ header h1 {
 
 .section-a {
   background-color: steelblue;
-  color: #f4f4f4;
+  color: #fff;
 }
 
 .section-b {
   background-color: skyblue;
-  color: #f4f4f4;
+  color: #000;
 }
 
 .btn-light, .btn-dark {
@@ -60,13 +60,32 @@ header h1 {
   margin-top: 1rem;
 }
 
+.btn {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.btn:hover {
+  --webkit-transform: $property;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
 .btn-light {
   background-color: #f4f4f4;
-  color: #333;
+  color: #000;
+}
+
+.btn-light:hover {
+  background-color: #a8a8a8;
 }
 
 .btn-dark {
   background-color: #333;
-  color: #f4f4f4;
+  color: #fff;
+}
+
+.btn-dark:hover {
+  background-color: #a8a8a8;
 }
 /*# sourceMappingURL=style.css.map */
