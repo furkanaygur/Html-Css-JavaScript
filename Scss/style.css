@@ -40,25 +40,9 @@ header h1 {
   margin-bottom: 1rem;
 }
 
-.section a {
-  text-decoration: none;
-  border: 1px solid #dddd;
-  padding: 0.25em 1rem;
-  border-radius: 5px;
-  color: #333;
-}
-
-.section a:hover {
-  opacity: 0.9;
-}
-
 .section-a {
   background-color: steelblue;
   color: #f4f4f4;
-}
-
-.section-a a {
-  background-color: skyblue;
 }
 
 .section-b {
@@ -66,7 +50,23 @@ header h1 {
   color: #f4f4f4;
 }
 
-.section-b a {
-  background-color: steelblue;
+.btn-light, .btn-dark {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.btn-light {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.btn-dark {
+  background-color: #333;
+  color: #f4f4f4;
 }
 /*# sourceMappingURL=style.css.map */
