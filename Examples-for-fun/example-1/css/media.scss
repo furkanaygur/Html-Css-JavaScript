@@ -1,0 +1,44 @@
+// Tablet
+#navbar {
+    h1 {
+        margin-bottom: .5rem;
+    }
+    flex-direction: column;
+}
+
+#section {
+    &-home {
+        flex-direction: column;
+        .about-text{
+            margin: 0 1rem;
+        }
+    }
+    &-langs {
+        .items {
+            flex-direction: column;
+            .item {
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
+
+// Mobile
+@media(max-width:500px){
+    #section {
+        &-home {
+            .about-text {
+                width: calc(100% - 15px);
+            }
+        }
+        
+        &-langs{
+            .item{
+                height: 100px !important;
+                width: 100px !important;
+                font-size: .7rem;
+            }
+        }
+    }
+}
