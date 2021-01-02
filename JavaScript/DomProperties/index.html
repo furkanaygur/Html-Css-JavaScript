@@ -13,7 +13,7 @@
         <div class="card-row">
             <div class="card-header">Todo List</div>
             <div class="card-body">
-                <form id="todo-form" name="form">
+                <form id="todo-form" name="form-name">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" name="todo" id="todo" placeholder="Enter a Todo">
@@ -21,11 +21,11 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Add Todo</button>
                 </form>
-                <hr>  
+             
+                
             </div>
-            
+            <hr>
             <div class="card-body">
-                <hr>
                 <h5 class="card-title" id="tasks-title">Todos</h5>
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -33,7 +33,20 @@
                     </div>
                 </div>
                 <hr>
-                <ul class="list-group"></ul>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between">Todo 1
+                        <a href="#" class="delete-item"><i class = 'fa fa-remove'></i></a>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">Todo 2
+                        <a href="#" class="delete-item"><i class = 'fa fa-remove'></i></a>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">Todo 3
+                        <a href="#" class="delete-item"><i class = 'fa fa-remove'></i></a>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">Todo 4
+                        <a href="#" class="delete-item"><i class = 'fa fa-remove'></i></a>
+                    </li>
+                </ul>
                 <hr>
                 <a href="#" id="clear-todos" class="btn btn-dark">Clear</a>
             </div>

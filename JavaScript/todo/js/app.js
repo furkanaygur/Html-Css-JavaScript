@@ -6,15 +6,35 @@ const secoundCardBody = document.querySelectorAll(".card-body")[1];
 const filterInput = document.querySelector("#filter");
 const clearBtn = document.querySelector("#clear-todos");
 
+const divItem = document.createElement("div");
+
+
 eventListeners();
 
-function eventListeners(){
+
+function eventListeners(){ 
     form.addEventListener("submit",addTodo);
     document.addEventListener("DOMContentLoaded",LoadAllTodosToUI);
     secoundCardBody.addEventListener("click",deleteTodo);
     filterInput.addEventListener("keyup",filterTodos);
     clearBtn.addEventListener("click", clearAllTodos);
 }
+
+
+function isEmpty(){
+    const todos = getTodosFromStorage();
+    if (JSON.stringify(todos) == "[]"){
+        divItem.className = "alert alert-warning";
+        divItem.setAttribute("role","alert");
+        divItem.setAttribute("style","display: block");
+        divItem.innerHTML = "<strong>There is no Todo here...</strong>"
+        todoList.appendChild(divItem);
+    }
+    else {
+        divItem.setAttribute("style","display: none");
+    }
+}
+
 
 // Add Todo
 function addTodo(e){
@@ -37,7 +57,7 @@ function addTodo(e){
             showAlert("success", "Successfully added.",newTodo);
         }
     }
-   
+    isEmpty();
     e.preventDefault();
 }
 
@@ -60,8 +80,8 @@ function addTodoToUI(newTodo){
 function showAlert(type, message, tName= "Todo"){
     const alert = document.createElement("div");
     alert.className = `alert alert-${type}`;
-    alert.textContent = `${tName} ` + message;
-
+    // alert.textContent = `${tName} ` + message;
+    alert.innerHTML = `<strong> ${tName} </strong> ${message}`;
     firstCardBody.appendChild(alert);
 
     setTimeout(function(){
@@ -94,7 +114,7 @@ function LoadAllTodosToUI(){
     todos.forEach(function(todo){
         addTodoToUI(todo);
     });
-
+    isEmpty(); 
 }
 
 // delete todo
@@ -105,6 +125,7 @@ function deleteTodo(e){
         deleteTodoFromStorage(e.target.parentElement.parentElement.textContent)
         showAlert("success", "Successfully deleted",tName);
     }
+    
 }
 
 // delete todo from storage
@@ -116,7 +137,9 @@ function deleteTodoFromStorage(deletetodo){
         }
     });
     localStorage.setItem("todos",JSON.stringify(todos));
+    isEmpty();
 }
+
 
 // filter todos
 function filterTodos(e){
@@ -124,13 +147,15 @@ function filterTodos(e){
     const listItems = document.querySelectorAll(".list-group-item");
     listItems.forEach(function(listItem){
         const text = listItem.textContent.toLocaleLowerCase();
+        
         if(text.indexOf(filterValue) === -1){
             listItem.setAttribute("style","display: none !important");
         }
         else {
-            listItem.setAttribute("style","display: block");
+            listItem.setAttribute("style","display: block");    
         }
-    });
+    }); 
+
 }
 
 // clear all todos
@@ -142,4 +167,6 @@ function clearAllTodos(e){
         }
         localStorage.removeItem("todos");
     }
+    console.log(todoList.firstElementChild)
+    isEmpty();
 }
