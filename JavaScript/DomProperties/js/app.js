@@ -36,7 +36,6 @@ document.forms[0].method
 
 
 // getAttribute 
-
 document.links[document.links.length-1].getAttribute("href")
 document.links[document.links.length-1].getAttribute("id")
 document.links[document.links.length-1].id
@@ -46,7 +45,6 @@ document.links[document.links.length-1].classList
 
 
 // Select element
-
 document.getElementById("id-name");
 
 document.getElementsByClassName("class-name");
@@ -61,6 +59,7 @@ value = document.querySelectorAll("li");
 value.forEach(function(val){
     console.log(val);
 });
+
 
 // Element Properties
 const element = document.querySelector("#clear-todos");
@@ -84,7 +83,6 @@ let element2 = document.querySelectorAll("li:nth-child(odd)");
 
 
 // Child Nodes
-
 const todoList = document.querySelector(".list-group");
 
 value = todoList.childNodes; // it also takes empty text
@@ -128,7 +126,6 @@ todoList.removeChild(todoList.lastElementChild)
 
 
 // Change element - Replace
-
 const newElement = document.createElement("h3");
 newElement.className = "card-title";
 newElement.id = "tasks-title";
@@ -158,6 +155,14 @@ todoInput.removeAttribute("name");
 
 // Dom Events
 
+// DOMContentLoaded
+document.addEventListener("DOMContentLoaded",loadFunction);
+
+function loadFunction(e){
+    console.log("page loaded");
+}
+
+
 todoInput.onfocus = function(){ // old version
     console.log("focused");
 }
@@ -171,8 +176,8 @@ todoInput.addEventListener("focus",function(e){ // new version
     console.log(e.target.value);
 });
 
-// submit
 
+// submit
 const todoForm = document.querySelector("#todo-form");
 
 todoForm.addEventListener("submit",submitForm);
@@ -185,7 +190,7 @@ function submitForm(e){
 
 // Keyboard Events
 
-keypress
+//keypress
 document.addEventListener("keypress",run); // keypress = only letter and only number
 
 // keydown
@@ -193,7 +198,140 @@ document.addEventListener("keydown",run); // all keys
 
 document.addEventListener("keyup",run);
 
-
 function run(e){
     console.log(e.key) // which key
 }
+
+
+// mouse events
+
+// click
+const title = document.querySelector("#tasks-title");
+
+title.addEventListener("click",run);
+
+//double click
+title.addEventListener("dblclick",run);
+
+// mouse down
+title.addEventListener("mousedown",run);
+
+// mouse up
+title.addEventListener("mouseup",run);
+
+// mouseover
+title.addEventListener("mouseover",run); // works on every element
+
+// mouseout 
+title.addEventListener("mouseout",run);
+
+// mouse enter && leave
+cardBody.addEventListener("mouseenter",run);
+cardBody.addEventListener("mouseleave",run);
+
+function run(e){
+    console.log(e.type);
+}
+
+
+
+// ınput events
+const filterInput = document.querySelector("#filter");
+
+// paste
+filterInput.addEventListener("paste",functionName);
+
+// copy
+filterInput.addEventListener("copy",functionName);
+
+// cut
+filterInput.addEventListener("cut",functionName);
+
+// select
+filterInput.addEventListener("select",functionName);
+
+function functionName(e){
+    console.log(e.type) // which key
+}
+
+
+
+// event bubbling
+document.querySelector(".container").addEventListener("click",function(){
+    console.log("div container");
+});
+
+document.querySelector(".card-row").addEventListener("click",function(){
+    console.log("card row");
+});
+
+document.querySelectorAll(".card-body")[1].addEventListener("click",function(){
+    console.log("card body");
+});
+
+
+
+// event capturing || delegation
+const cardBody = document.querySelectorAll(".card-body")[1].addEventListener("click",run);
+
+function run(e){
+    console.log(e.target);
+    if(e.target.className === "fa fa-remove"){
+        console.log("delete event");
+    }
+}
+
+
+// local storage && session storage
+
+// session storage
+const todoInput = document.querySelector("#todo");
+
+const addBtn = document.querySelector("#addBtn");
+
+// const delBtn = document.querySelector("#delBtn");
+// const clearBtn = document.querySelector("#clearBtn");
+
+addBtn.addEventListener("click",addItem);
+
+// delBtn.addEventListener("click",deleteItem);
+// clearBtn.addEventListener("click",clearItem);
+
+
+function addItem(e){
+    sessionStorage.setItem("key value",todoInput.value)
+}
+
+// function deleteItem(e){
+//     sessionStorage.removeItem(todoInput.value);
+// }
+
+// function clearItem(e){
+//     sessionStorage.clear();
+// }
+
+
+// local storage
+localStorage.setItem("person","furkanaygur");
+localStorage.setItem("age",22); // integers are always saved as strings
+
+localStorage.getItem("person");
+
+localStorage.clear();
+
+if(localStorage.getItem("abc")===null){
+    console.log("dont exist");
+}
+else {
+    console.log("exist");
+}
+
+// local storage - array
+const todos = ["furkan","aygur",22];
+
+localStorage.setItem("todos",todos); // => write as string "furkan, aygur, 22"
+
+localStorage.setItem("todos",JSON.stringify(todos)); // => write as array ["furkan","aygur","22"]
+
+// get array item from local storage
+console.log(JSON.parse(localStorage.getItem("todos")));
