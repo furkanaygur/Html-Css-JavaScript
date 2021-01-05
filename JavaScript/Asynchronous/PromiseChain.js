@@ -7,7 +7,7 @@
 //                 resolve(data);
 //             }
 //             else {
-//                 reject("value isn't a string");
+//                 reject(new Error("value isn't a string"));
 //             }
 //         },2500);
 //     });
@@ -25,7 +25,7 @@ function addTwo(data){
                 resolve(data+2);
             }
             else {
-                reject("Value isn't a number");
+                reject(new Error("Value isn't a number"));
             }
         },2500);
     });

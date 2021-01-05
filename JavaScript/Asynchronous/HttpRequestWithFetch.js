@@ -3,7 +3,7 @@ class Request {
     get(url){
         return new Promise((resolve, reject) => {
             fetch(url).then(response => response.json()).then(data => resolve(data))
-            .catch(err => reject(err))
+            .catch(err => reject(new Error(err)))
         });
     }
 
@@ -17,7 +17,7 @@ class Request {
                     "Content-type": "application/json; charset= UTF-8"
                 }
             }).then(response => response.json()).then(data => resolve(data))
-            .catch(err => reject(err));
+            .catch(err => reject(new Error(err)));
         })
     }
 
@@ -31,7 +31,7 @@ class Request {
                     "Content-type": "application/json; charset= UTF-8"
                 }
             }).then(response => response.json()).then(data => resolve(data))
-            .catch(err => reject(err));
+            .catch(err => reject(new Error(err)));
         })
     }
 
@@ -40,7 +40,7 @@ class Request {
     delete(url){
         return new Promise((resolve, reject)=> {
             fetch(url, { method: "DELETE" }).then(response => resolve("Data deleted."))
-            .catch(err => reject("Data could not be deleted"));
+            .catch(err => reject(new Error("Data could not be deleted")));
         })
     }
 }
