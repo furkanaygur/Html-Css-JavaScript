@@ -10,12 +10,12 @@ btnHamburger.addEventListener("click", function(){
         header.classList.remove("header-open");
         overlay.classList.remove("fade-in");
         overlay.classList.add("fade-out");
+        
         fadeElems.forEach(element => {
             element.classList.remove("fade-in");
             element.classList.add("fade-out");
-            
         });
-
+        
     }
     else {
         body.classList.add("noscroll");

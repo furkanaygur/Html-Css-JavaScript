@@ -19,6 +19,7 @@
     }
 
     .overlay{
+        visibility: hidden;
         opacity: 0;
         position: fixed;
         right: 0px;
@@ -58,6 +59,7 @@
 
     &-hamburger-menu {
         position: absolute;
+        z-index: 1;
         width: 50%;
         left: 25%;
         background-color: $white;
@@ -92,7 +94,7 @@
             height: 5px;
             left: 0;
             right: 0;
-            bottom: -30px;
+            bottom: -15px;
             border-radius: 2px;
             background: linear-gradient(to right,$limeGreen, $brightCyan);
             opacity: 0;
