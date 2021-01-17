@@ -1,0 +1,65 @@
+.features {
+    background-color: $lightGrayishBlue;
+    padding: 4rem;
+    text-align: center;
+
+    @include breakpoint-up(medium){
+        text-align: left;
+    }
+
+    &-intro {
+        margin-bottom: 3.75rem;
+        @include breakpoint-up(large){
+            width: 65%; 
+        }
+    }
+    &-items{
+        
+        @include breakpoint-up(medium){
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &-item {
+        margin-bottom: 1.5rem;
+        @include breakpoint-up(medium){
+            flex: 0 0 50%;
+        }
+        @include breakpoint-up(large){
+            flex: 1;
+        }
+
+        &-icon {
+            margin-bottom: 1.875rem;
+            @include breakpoint-up(large){
+                margin-bottom: 2.75rem;
+            }
+        }
+
+        &-title  {
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.15;
+            color: $darkBlue;
+            margin-bottom: 1rem;
+        
+            @include breakpoint-up(large){
+              font-size: 1.5rem;
+              margin-bottom: 1.5rem;
+              
+            }
+          }
+
+        &-description{
+            font-size: 0.875rem;
+            line-height: 1.5;
+            @include breakpoint-up(medium){
+                width: 90%;
+            }
+            @include breakpoint-up(large){
+                width: 83%;
+            }
+        }
+    }
+   
+}

@@ -26,8 +26,28 @@ body{
 
 h1,h2,h3 {
     margin-top: 0;
+    font-weight: 300;
+    color: $darkBlue;
+    line-height: 1.15;
 }
 
+h1{
+    font-size: 2.31rem;
+    margin-bottom: 1.5rem;
+    @include breakpoint-up(large){
+        font-size: $font-xlg;
+    }
+}
+
+h2{
+    font-size: 1.875rem;
+    margin-bottom: 1.5625rem;
+
+    @include breakpoint-up(large){
+        font-size: 2.25rem;
+        margin-bottom: 2.25rem;
+    }
+}
 
 a,a:visited,a:hover {
     text-decoration: none;
@@ -74,6 +94,7 @@ a,a:visited,a:hover {
 
 // Buttons
 .button {
+    position: relative;
     padding: 0.875rem 2.1875rem;
     background: linear-gradient(to right,$limeGreen, $brightCyan);
     border-radius: 3rem;
@@ -82,6 +103,24 @@ a,a:visited,a:hover {
     cursor: pointer;
     font-weight: 400;
     font-size: $font-sm;
+    transition: opacity 250ms ease-in;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($color: #ffffff, $alpha: .3);
+        border-radius: 3rem;
+        transform: scale(0);
+        opacity: 0;
+        transition: all 250ms ease-in-out;
+    }
+    &:hover::before{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 // Visibilty

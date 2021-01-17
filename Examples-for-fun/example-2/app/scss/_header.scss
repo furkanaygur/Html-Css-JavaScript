@@ -3,8 +3,8 @@
     &-open{
         .overlay {
             display: block !important;
+            z-index: 1;
         }
-
         .header-toggle {
             > span:first-child{
                 transform: rotate(45deg);
@@ -29,8 +29,8 @@
         background: linear-gradient($darkBlue, transparent);
     }
 
-
     nav{
+        z-index: 1;
         position: relative;
         background-color: $white;
         padding: 1.0625rem 1.5rem;
@@ -67,7 +67,7 @@
         margin-top: 1.5rem;
         background: $white;
         border-radius: 5px;
-        a{  
+        a{    
             display: block;
             color: $darkBlue;
             padding: 0.625rem;
@@ -94,7 +94,7 @@
             height: 5px;
             left: 0;
             right: 0;
-            bottom: -15px;
+            bottom: -20px;
             border-radius: 2px;
             background: linear-gradient(to right,$limeGreen, $brightCyan);
             opacity: 0;
@@ -110,12 +110,5 @@
            }
        }
     }
-    &-button {
-        font-size: $font-sm;
-        color: $white;
-        transition: opacity 250ms ease-in;
-        &:hover{
-            opacity: 0.80;
-        }
-    }
+  
 }
