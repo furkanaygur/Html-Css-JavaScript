@@ -1,0 +1,108 @@
+// Globals
+
+// *
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+// * end
+
+// body
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    color: white;
+    position: relative;
+}
+// body end
+
+// Globals end
+
+// alert 
+.alert {
+    background-color: red;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transform: translateY(-8vh);
+    transition: all 250ms ease-in-out;
+
+    &-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+// alert end
+
+
+// locatione & tempreature
+.location, .temperature {
+    height: 30vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+// locatione & tempreature end
+
+// location 
+.location {
+    font-size: 2rem;
+}
+// location end
+
+// temperature
+.temperature {
+    flex-direction: column;
+
+    // temperature degree
+    &-degree{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        // temperature value
+        &-value{
+            margin-right: .75rem;
+            font-size: 2.5rem;
+        }
+        // temperature value end
+
+        // temperaturen span
+        span {
+            font-size: 1.5rem;
+            position: relative;
+
+            // span before
+            &::before {
+                content: "o";
+                position: absolute;
+                font-size: .75rem;
+                top: 0;
+                left: -.5rem;
+            }
+            // span before end
+        }
+        // temperature span end
+    }
+    // temperature degree end
+
+    // temperature description 
+    &-description {
+        font-size: 1.75rem;
+    }
+    // temperature description end
+
+}
+// temperature end
+
