@@ -1,0 +1,66 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+.clock {
+    border: 4px solid black;
+    border-radius: 50%;
+    width: 40rem;
+    height: 40rem;
+    background: url("/example-5-Digital&Analog-Clock/AnalogClock/images/ios_clock.svg") no-repeat center center/90%;
+    position: relative;
+}
+
+.sec, .min, .hour, .dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    transform-origin: 25% 0;
+}
+
+.dot {
+    transform: translate(-50%,-40%);
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 9;
+}
+
+.sec {
+    width: 3px;
+    height: 200px;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.min {
+    z-index: 7;
+    width: 5px;
+    height: 150px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.hour {
+    z-index: 8;
+    width: 8px;
+    height: 100px;
+    background-color: black;
+    border-radius: 10px;
+    transform-origin: 40% 0;
+}
+

@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#text {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn {
+
+    height: 2rem;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba($color: #fff, $alpha: .5);
+    }
+}
