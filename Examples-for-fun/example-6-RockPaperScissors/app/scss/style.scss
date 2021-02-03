@@ -1,0 +1,135 @@
+// Globals
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background-color: #ddd;
+}
+// Globals end
+
+// container
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+// container end
+
+// item
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  // item not last child
+  &:not(:last-child) {
+    border-right: 1px solid black;
+  }
+  // item not last child end
+}
+// item end
+
+// choice & bot
+.choice,
+.bot {
+  // img
+  img {
+    width: 150px;
+  }
+  // img end
+}
+// choice & bot end
+
+// options
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 2rem;
+  // img
+  img {
+    width: 75px;
+    height: auto;
+    cursor: pointer;
+  }
+  // img end
+}
+// options end
+
+// result
+.result {
+  font-size: 3rem;
+}
+// result end
+
+// button
+button {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 100px;
+  height: 25px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 250ms ease;
+
+  // button start
+  &#start {
+    border-color: blue;
+    color: blue;
+    // button start hover
+    &:hover {
+      background-color: blue;
+      color: white;
+    }
+    // button start hover end
+  }
+  // button start end
+
+  // button reset
+  &#reset {
+    border-color: red;
+    color: red;
+    // button reset hover
+    &:hover {
+      background-color: red;
+      color: white;
+    }
+    // button reset hover end
+  }
+  // button reset end
+}
+// button end
+
+// alert
+.alert {
+  position: absolute;
+  width: 500px;
+  height: 50px;
+  top: -55px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 0 0 5px 5px;
+  transition: all 300ms ease-in-out;
+  // alert active
+  &-active {
+    top: 0;
+  }
+  // alert active end
+}
+// alert end

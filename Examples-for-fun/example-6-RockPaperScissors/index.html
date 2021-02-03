@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Css -->
+    <link rel="stylesheet" href="app/scss/dist/style.min.css" />
+
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <!-- alert -->
+    <div class="alert"></div>
+
+    <!-- container -->
+    <div class="container">
+      <!-- item -->
+      <div class="item">
+        <!-- choice -->
+        <div class="choice"><img src="img/question.png" alt="question" /></div>
+
+        <!-- options -->
+        <div class="options">
+          <img src="img/rock.png" alt="rock" id="rock" />
+          <img src="img/paper.png" alt="paper" id="paper" />
+          <img src="img/scissors.png" alt="scissors" id="scissors" />
+        </div>
+        <!-- options end -->
+      </div>
+      <!-- item end -->
+
+      <!-- item -->
+      <div class="item">
+        <!-- result  -->
+        <div class="result"></div>
+
+        <!-- buttons -->
+        <button id="start">Start</button>
+        <button id="reset">Restart</button>
+      </div>
+      <!-- item end -->
+
+      <!-- item -->
+      <div class="item">
+        <!-- bot -->
+        <div style="margin-bottom: 4rem" class="bot">
+          <img src="img/question.png" alt="question" />
+        </div>
+        <!-- bot end -->
+      </div>
+      <!-- item end -->
+    </div>
+    <!-- container end -->
+
+    <!-- Script -->
+    <script src="app/js/script.js"></script>
+  </body>
+</html>
