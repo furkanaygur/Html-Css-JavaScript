@@ -1,0 +1,103 @@
+// Globals
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: green;
+  overflow: hidden;
+  width: 100%;
+}
+
+img {
+  width: 100px;
+  height: auto;
+  transition: all 1s ease-in;
+}
+// Globals end
+
+// Container
+.container {
+  margin-top: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: green;
+  position: relative;
+}
+// Container end
+
+// Finish
+.finish {
+  position: absolute;
+  transform: rotate(90deg) translate(38%, -590%);
+  right: 0;
+  top: 0;
+  height: 1.5rem;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.3rem;
+  background-color: red;
+}
+// Finish end
+
+// btn
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+
+  // button
+  button {
+    width: 100px;
+    height: 2rem;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 250ms ease;
+    // button hover
+    &:hover {
+      background-color: white;
+      color: green;
+    }
+    // button hover end
+  }
+  // button end
+}
+// btn end
+
+// alert
+.alert {
+  position: absolute;
+  width: 500px;
+  height: 50px;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 5px 5px;
+  z-index: 9;
+  background-color: red;
+  transition: all 250ms ease-in;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+
+  // alert active
+  &-active {
+    top: 0;
+  }
+  // alerte active end
+}
+// alert end
