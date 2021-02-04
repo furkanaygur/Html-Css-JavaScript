@@ -1,0 +1,236 @@
+// globals
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// globals end
+
+// board
+.board {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+  background-color: black;
+
+  // // board x hover before-after
+
+  // board x cell not x & not circle hover before-after
+  &.x .cell:not(.x):not(.circle):hover::before,
+  &.x .cell:not(.x):not(.circle):hover::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 90px;
+    background-color: gray;
+    border-radius: 5px;
+  }
+  // board x cell not x & not circle hover before-after end
+
+  // board x before & board x cell not x & not circle before
+  &.x::before,
+  &.x .cell:not(.x):not(.circle):hover::before {
+    transform: rotate(45deg);
+  }
+  // board x before & board x cell not x & not circle before end
+
+  // board x after & board x cell not x & not circle after
+  &.x::after,
+  &.x .cell:not(.x):not(.circle):hover::after {
+    transform: rotate(-45deg);
+  }
+  // board x after & board x cell not x & not circle after end
+
+  ///// board x hover before-after end
+
+  // // board circle before-after
+
+  // board circle cell not x & not circle hover before-after
+  &.circle .cell:not(.x):not(.circle):hover::before,
+  &.circle .cell:not(.x):not(.circle):hover::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  // board circle cell not x & not circle hover before-after end
+
+  // board circle before & board x cell not x & not circle before
+  &.circle::before,
+  &.circle .cell:not(.x):not(.circle):hover::before {
+    width: 75px;
+    height: 75px;
+    background-color: gray;
+  }
+  // board circle before & board x cell not x & not circle before end
+
+  // board circle after & board x cell not x & not circle after
+  &.circle::after,
+  &.circle .cell:not(.x):not(.circle):hover::after {
+    width: 55px;
+    height: 55px;
+    background-color: black;
+  }
+  // board circle after & board x cell not x & not circle after end
+
+  // // board circle before-after end
+}
+// board end
+
+// cell
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  // // Borders
+
+  // 1. 2. 3. childs
+  &:first-child,
+  &:nth-child(2),
+  &:nth-child(3) {
+    border-top: none;
+  }
+  // 1. 2. 3. childs end
+
+  // 1. 4. 7. childs
+  &:nth-child(3n + 1) {
+    border-left: none;
+  }
+  // 1. 4. 7. childs end
+
+  // 3. 6. 9. childs
+  &:nth-child(3n + 3) {
+    border-right: none;
+  }
+  // 3. 6. 9. childs end
+
+  // 7. 8. 9. childs
+  &:nth-child(7),
+  &:nth-child(8),
+  &:last-child {
+    border-bottom: none;
+  }
+  // 7. 8. 9. childs end
+
+  // // Borders end
+
+  // x & circle
+  &.x,
+  &.circle {
+    cursor: not-allowed;
+  }
+  // x & circle end
+
+  // x before-after
+  &.x::before,
+  &.x::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 90px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  &.x::before {
+    transform: rotate(45deg);
+  }
+  &.x::after {
+    transform: rotate(-45deg);
+  }
+  // x before-after end
+
+  // // circle before-after end
+
+  // circle before-after
+  &.circle::before,
+  &.circle::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  // circle before-after end
+
+  // circle before
+  &.circle::before {
+    width: 75px;
+    height: 75px;
+    background-color: white;
+  }
+  // circle before end
+
+  // circle after
+  &.circle::after {
+    width: 55px;
+    height: 55px;
+    background-color: black;
+  }
+  // circle after end
+
+  // // circle before-after end
+}
+// cell end
+
+// message
+.message {
+  position: fixed;
+  top: 50%;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  transform: translate(-50%, -50%) scale(0.6);
+  opacity: 0;
+  visibility: hidden;
+  height: 350px;
+  width: 350px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3.5rem;
+  transition: all 300ms ease-in;
+  border: 1px solid white;
+  border-radius: 5px;
+  // message show
+  &-show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  // message show end
+
+  // button
+  button {
+    margin-top: 1rem;
+    background: transparent;
+    width: 100px;
+    height: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 250ms ease;
+
+    // button hover
+    &:hover {
+      background: white;
+      color: black;
+    }
+    // button hover end
+  }
+  // button end
+}
+// message end
