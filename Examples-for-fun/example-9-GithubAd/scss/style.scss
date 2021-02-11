@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.browser {
+    width: 500px;
+    height: 300px;
+    border: 1px solid #ddd;
+    margin: 50px auto;
+    border-radius: 3px;
+    
+    &-header  {
+        display: flex;
+        height: 40px;
+        background-color: #eee;
+        align-items: center;
+        padding: 0 25px;
+        span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #FFBD44;
+            position: relative;
+            &::before, &::after{
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                position: absolute;
+            }
+
+            &::before{
+                background-color: #FF605C;
+                left: -15px;
+            }
+            &::after{
+                background-color: #00CA4E;
+                right: -15px;
+            }
+        }
+    }
+
+    &-content {
+        width: 100%;
+        height: 300px;
+        background: url("/example1-GithubAd/img/github.com_furkanaygur.png");
+        background-size: cover;
+        transition: all 4s ease-in-out;
+        &:hover {
+            background-position: bottom;
+        }
+    }
+}
