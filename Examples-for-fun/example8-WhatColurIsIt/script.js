@@ -10,7 +10,7 @@ function showTime() {
     let hour = date.getHours()
     let amPm = checkTime(hour)
 
-    changeColor(hour, min, sec)
+    changeColor(addZero(hour), addZero(min), addZero(sec))
     clock.textContent = `${converTime(addZero(hour))}:${addZero(min)}:${addZero(sec)} ${amPm}`
 }
 
