@@ -1,0 +1,16 @@
+{
+  "employees": [
+    {
+      "name": "Furkan Aygur",
+      "department": "Software Engineer",
+      "salary": 6000,
+      "id": 1
+    },
+    {
+      "name": "Talha Aydın",
+      "department": "Information Systems Engineer",
+      "salary": 4000,
+      "id": 2
+    }
+  ]
+}
