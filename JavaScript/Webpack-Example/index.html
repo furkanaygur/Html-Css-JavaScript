@@ -24,14 +24,14 @@
                             <input class="form-control" type="text" name="name" id="name" placeholder="Employee Name">
                         </div>
                         <div class="form-group col-md-6">
-                            <input class="form-control" type="text" name="department" id="epartment"
+                            <input class="form-control" type="text" name="department" id="department"
                                 placeholder="Departman">
                         </div>
                         <div class="form-group col-md-6">
                             <input class="form-control" type="text" name="salary" id="salary" placeholder="Salary">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-danger">Add Employee</button>
+                    <button type="submit" class="btn btn-danger" id="add-employee">Add Employee</button>
                 </form>
                 <hr>
                 <button id="update" class="btn btn-dark" style="display:none;">Update Employee</button>
@@ -49,10 +49,10 @@
                 <table class="table table-dark">
                     <thead>
                         <tr>
+                            <th scope="col">Id</th>
                             <th scope="col">Name</th>
                             <th scope="col">Departman</th>
                             <th scope="col">Salary</th>
-                            <th scope="col">Id</th>
                         </tr>
                     </thead>
                     <tbody id="employees">
