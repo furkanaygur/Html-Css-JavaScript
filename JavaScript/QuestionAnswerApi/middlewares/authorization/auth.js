@@ -14,6 +14,12 @@ const getAccessToRoute = (req, res, next) => {
         if (err) {
             return next(new CustomError("You are not authorized to access this route", 401))
         }
+
+        req.user = {
+            id: decoded.id,
+            name: decoded.name
+        }
+
         console.log(decoded)
         next()
     })
